@@ -16,7 +16,7 @@ import {
   Github
 } from 'lucide-react';
 import Link from 'next/link';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+// import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 export default function AboutPage() {
   const values = [
@@ -198,10 +198,9 @@ export default function AboutPage() {
             {team.map((member, index) => (
               <Card key={index} className="border-0 bg-gradient-to-br from-card to-card/50 text-center hover:scale-105 transition-all duration-300">
                 <CardHeader>
-                  <Avatar className="w-24 h-24 mx-auto mb-4">
-                    <AvatarImage src={member.avatar} />
-                    <AvatarFallback>{member.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
-                  </Avatar>
+                  <div className="w-24 h-24 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center">
+                    <span className="text-primary font-bold text-xl">{member.name.split(' ').map(n => n[0]).join('')}</span>
+                  </div>
                   <CardTitle className="font-headline text-lg">{member.name}</CardTitle>
                   <CardDescription className="text-primary font-medium">{member.role}</CardDescription>
                 </CardHeader>
